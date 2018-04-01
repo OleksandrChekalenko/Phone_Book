@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -17,18 +18,14 @@ public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @NotNull
     private int id_user;
-    @NotNull
     @UniqueElements
     private String login;
-    @NotNull
     private String password;
-    @NotNull
     private String snp;
-    /*@OneToMany(targetEntity = Contacts.class, mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany( cascade = CascadeType.ALL, targetEntity = Contacts.class, mappedBy = "user", fetch = FetchType.EAGER)
     private List<Contacts> contactsList = new ArrayList<>();
-*/
+
     public User() {
 
     }
@@ -71,13 +68,13 @@ public class User implements Serializable {
         this.snp = snp;
     }
 
-   /* public List<Contacts> getContactsList() {
+    public List<Contacts> getContactsList() {
         return contactsList;
     }
 
     public void setContactsList(List<Contacts> contactsList) {
         this.contactsList = contactsList;
-    }*/
+    }
 
     @Override
     public String toString() {

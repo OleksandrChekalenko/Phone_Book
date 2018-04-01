@@ -1,36 +1,31 @@
-/*
 package com.example.demo.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-*/
 /**
  * Created by Cagy on 4/1/2018.
- *//*
-
+ */
 @Entity
-public class Contacts implements Serializable {
+@Table(name = "contacts")
+public class Contacts {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @NotNull
     private int id_contact;
-    @NotNull
     private String sureName;
-    @NotNull
     private String name;
-    @NotNull
     private String patronymic;
-    @NotNull
     private String mobileNumber;
     private String homeNumber;
     private String adds;
     private String email;
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user_id;
+    private User user;
 
     public Contacts() {
     }
@@ -50,7 +45,7 @@ public class Contacts implements Serializable {
         this.homeNumber = homeNumber;
         this.adds = adds;
         this.email = email;
-        this.user_id = user_id;
+       // this.user_id = user_id;
     }
 
     public int getId_contact() {
@@ -117,12 +112,12 @@ public class Contacts implements Serializable {
         this.email = email;
     }
 
-    public User getUser_id() {
-        return user_id;
+    public User getUser() {
+        return user;
     }
 
-    public void setUser_id(User user_id) {
-        this.user_id = user_id;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
@@ -136,9 +131,8 @@ public class Contacts implements Serializable {
         sb.append(", homeNumber='").append(homeNumber).append('\'');
         sb.append(", adds='").append(adds).append('\'');
         sb.append(", email='").append(email).append('\'');
-        sb.append(", user_id=").append(user_id);
+        //sb.append(", user_id=").append(user_id);
         sb.append('}');
         return sb.toString();
     }
 }
-*/
