@@ -37,7 +37,7 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }</style>
-<body>
+<body >
 
 <!-- Navbar -->
 <div class="w3-top">

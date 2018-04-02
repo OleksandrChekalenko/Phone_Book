@@ -92,7 +92,7 @@
 
 </script>
         </head>
-<body>
+<body background=images/walletHomePage.png">
 
 <#include "header3.ftl">
 <br><br><br>
