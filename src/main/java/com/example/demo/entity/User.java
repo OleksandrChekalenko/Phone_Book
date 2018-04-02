@@ -23,6 +23,8 @@ public class User implements Serializable {
     private String login;
     private String password;
     private String snp;
+    @Column(nullable = false)
+    private int enabled = 1;
     @OneToMany( cascade = CascadeType.ALL, targetEntity = Contacts.class, mappedBy = "user", fetch = FetchType.EAGER)
     private List<Contacts> contactsList = new ArrayList<>();
 
@@ -34,6 +36,14 @@ public class User implements Serializable {
         this.login = login;
         this.password = password;
         this.snp = snp;
+    }
+
+    public int getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
     }
 
     public int getId_user() {
