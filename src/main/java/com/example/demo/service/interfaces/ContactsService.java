@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.interfaces;
 
 import com.example.demo.entity.Contacts;
 
@@ -10,5 +10,6 @@ import java.util.List;
 public interface ContactsService extends IService<Contacts> {
 
     List<Contacts> getAll(int user);
+
 
 }

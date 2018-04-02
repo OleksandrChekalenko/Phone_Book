@@ -7,9 +7,12 @@ public interface IDAO<T> {
 
     void save(T entity);
 
-    void delete(T entity);
+    void deleteById(int entity);
+
 
     T update(T entity);
+
+    T getById(int id);
 }
 /*public interface IDAO<T> {
 
@@ -21,6 +24,6 @@ public interface IDAO<T> {
 
     void update(T entity);
 
-    void delete(T entity);
+    void deleteContact(T entity);
 }
 */

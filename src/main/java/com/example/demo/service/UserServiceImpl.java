@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.dao.interfaces.UserDao;
 import com.example.demo.entity.User;
+import com.example.demo.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -23,6 +24,12 @@ public class UserServiceImpl implements UserService {
     public User getById(int id) {
         return null;
     }
+
+    @Override
+    public void deleteContact(int id) {
+
+    }
+
 
     @Override
     public User getUserByName(String name) {

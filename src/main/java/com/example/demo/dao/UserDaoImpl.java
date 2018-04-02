@@ -23,8 +23,10 @@ public class UserDaoImpl implements UserDao {
     entityManager.persist(user);
     }
 
+
+
     @Override
-    public void delete(User entity) {
+    public void deleteById(int id_contact) {
 
     }
 
@@ -32,6 +34,11 @@ public class UserDaoImpl implements UserDao {
     @Transactional
     public User update(User user) {
         return entityManager.merge(user);
+    }
+
+    @Override
+    public User getById(int id) {
+        return null;
     }
 
     @Override

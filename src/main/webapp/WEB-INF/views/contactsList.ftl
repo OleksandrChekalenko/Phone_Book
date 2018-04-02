@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <title>ContactsData</title>
 </head>
-<body class="container">
+<body class="container" background=images/walletHomePage.png">
 <#include "templates/header3.ftl">
-<br><br><br>
+<br><br>
+
+<div id="margin" >
+    <form action="contacts/addContact" method="get" name="wallet" class="form-group">
+        <button id="button" type="submit">New contact</button>
+    </form>
+</div>
 
 <div id="margin">
-
-
     <table class="table table-striped">
         <tr>
 
@@ -53,11 +57,11 @@
     </#list>
     </table>
 </div>
-<br>
-<div id="margin">
+
+<#--<div id="margin">
     <form action="contacts/addContact" method="get" name="wallet" class="form-group">
         <button id="button" type="submit">New contact</button>
     </form>
-</div>
+</div>-->
 </body>
 </html>

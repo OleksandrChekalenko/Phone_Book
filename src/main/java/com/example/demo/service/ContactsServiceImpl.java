@@ -1,9 +1,10 @@
 package com.example.demo.service;
 
 import com.example.demo.dao.interfaces.ContactsDao;
-import com.example.demo.dao.interfaces.IDAO;
 import com.example.demo.entity.Contacts;
+import com.example.demo.service.interfaces.ContactsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -18,6 +19,23 @@ public class ContactsServiceImpl implements ContactsService {
     @Override
     public void save(Contacts contacts) {
         contactsDao.save(contacts);
+    }
+
+    @Override
+    public Contacts getById(int id) {
+        return contactsDao.getById(id);
+    }
+
+    @Override
+    @Transactional
+    public void deleteContact(int id) {
+        contactsDao.deleteById(id);
+    }
+
+    @Override
+    @Transactional
+    public void update(Contacts contact) {
+        contactsDao.update(contact);
     }
 
     @Override

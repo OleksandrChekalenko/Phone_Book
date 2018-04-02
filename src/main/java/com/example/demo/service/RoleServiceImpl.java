@@ -3,6 +3,7 @@ package com.example.demo.service;
 
 import com.example.demo.dao.interfaces.RoleDao;
 import com.example.demo.entity.Role;
+import com.example.demo.service.interfaces.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.transaction.Transactional;
@@ -23,10 +24,25 @@ public class RoleServiceImpl implements RoleService {
 
     }
 
+    @Override
+    public Role getById(int id) {
+        return null;
+    }
+
+    @Override
+    public void deleteContact(int id) {
+
+    }
+
+    @Override
+    public void update(Role entity) {
+
+    }
+
 
     @Transactional
     public void delete(String name) {
-        roleDao.delete(roleDao.getRoleByName(name));
+        //roleDao.deleteById(roleDao.getRoleByName(name));
     }
 
     @Override

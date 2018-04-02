@@ -9,6 +9,9 @@ import com.example.demo.dao.interfaces.ContactsDao;
 import com.example.demo.dao.interfaces.RoleDao;
 import com.example.demo.dao.interfaces.UserDao;
 import com.example.demo.service.*;
+import com.example.demo.service.interfaces.ContactsService;
+import com.example.demo.service.interfaces.RoleService;
+import com.example.demo.service.interfaces.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

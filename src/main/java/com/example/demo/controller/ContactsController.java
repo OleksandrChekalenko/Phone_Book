@@ -2,15 +2,12 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Contacts;
 import com.example.demo.entity.User;
-import com.example.demo.service.ContactsService;
-import com.example.demo.service.UserService;
+import com.example.demo.service.interfaces.ContactsService;
+import com.example.demo.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 
@@ -20,6 +17,8 @@ import java.security.Principal;
 @Controller
 @RequestMapping("/contact")
 public class ContactsController {
+
+    int deletedContactId;
 
     @Autowired
     private UserService userService;
@@ -47,4 +46,16 @@ public class ContactsController {
         return "redirect:/contact/contacts";
     }
 
+    @GetMapping("contacts/delete/{id_contact}")
+    public String deleteContact(@PathVariable("id_contact") int id_contact, Principal principal) {
+        User user = userService.getUserByLogin(principal.getName());
+        Contacts contact = contactsService.getById(id_contact);
+        deletedContactId = contact.getId_contact();
+        contact.setUser(null);
+        contactsService.update(contact);
+        contactsService.deleteContact(deletedContactId);
+        return "redirect:/contact/contacts";
+    }
+
 }
+

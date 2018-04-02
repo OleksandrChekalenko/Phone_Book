@@ -3,6 +3,7 @@ package com.example.demo.dao;
 import com.example.demo.dao.interfaces.ContactsDao;
 import com.example.demo.dao.interfaces.IDAO;
 import com.example.demo.entity.Contacts;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -21,8 +22,16 @@ public class ContactsDaoImpl implements ContactsDao {
         entityManager.persist(contacts);
     }
 
+    /*@Override
+    @Transactional
+    public void delete(Contacts contact) {
+        entityManager.remove(contact);
+    }*/
+
     @Override
-    public void delete(Contacts entity) {
+    @Transactional
+    public void deleteById(int id_contact) {
+        entityManager.remove(getById(id_contact));
 
     }
 
@@ -32,9 +41,15 @@ public class ContactsDaoImpl implements ContactsDao {
     }
 
     @Override
+    public Contacts getById(int id) {
+        return entityManager.createQuery("SELECT c from Contacts c WHERE id_contact =" + id, Contacts.class)
+                .getSingleResult();
+    }
+
+    @Override
     public List<Contacts> getAll(int user) {
         return entityManager.createQuery("SELECT c from Contacts c where user_id  = " + user, Contacts.class)
-
                                     .getResultList();
     }
+
 }
