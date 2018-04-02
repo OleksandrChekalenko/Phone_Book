@@ -10,6 +10,7 @@ public interface UserService extends IService<User> {
     User getById(int id);
 
     User getUserByName(String name);
+    User getUserByLogin(String login);
 
     List<User> getAll();
 

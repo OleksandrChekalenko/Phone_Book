@@ -19,6 +19,7 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_user;
+    @UniqueElements
     private String login;
     private String password;
     private String snp;

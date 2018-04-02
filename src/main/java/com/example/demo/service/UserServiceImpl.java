@@ -30,6 +30,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User getUserByLogin(String login) {
+        return userDao.getUserByLogin(login);
+    }
+
+    @Override
     public List<User> getAll() {
         return null;
     }

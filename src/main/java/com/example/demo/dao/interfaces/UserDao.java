@@ -15,7 +15,7 @@ public interface UserDao extends IDAO<User> {
 
     User getUsersById(int id);
 
-    User getUserByName(String name);
+    User getUserByLogin(String name);
 
 
 }
