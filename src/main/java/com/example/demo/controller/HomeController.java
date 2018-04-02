@@ -44,17 +44,16 @@ public class HomeController {
 
     @PostMapping("/newUser")
     public String createUser(@ModelAttribute User user, Model model) {
-        /*List<String> errors = Utils.validate(user);
-        if (!errors.isEmpty()) {
-            model.addAttribute("errors", errors);
-            return "registrationPage";
-        } else {*/
             userService.save(user);
             Role role = new Role();
             role.setName(user.getLogin());
             role.setRole("ROLE_USER");
             roleService.save(role);
             return "susuccessRegistration";
-        //}
+    }
+
+    @GetMapping("/about")
+    public String about() {
+        return "aboutPage";
     }
 }

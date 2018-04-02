@@ -69,6 +69,6 @@
 </#list>
 </table>
 </div>
-<#include "templates/createWalletForm.ftl"/>
+<#include "templates/createContactForm.ftl"/>
 </body>
 </html>-->

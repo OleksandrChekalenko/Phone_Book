@@ -7,7 +7,7 @@
 <body class="container">
     <#include "templates/header3.ftl">
 <div id="margin">
-    <#include "templates/createWalletForm.ftl">
+    <#include "templates/createContactForm.ftl">
 </div>
 </body>
 </html>

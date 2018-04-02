@@ -7,6 +7,6 @@
 <body class="container">
 <#include "templates/header3.ftl">
 <br><br><br>
-<h1> CONTACT PAGE</h1>
+<h1 align="center">ABOUT PAGE </h1>
 </body>
 </html>

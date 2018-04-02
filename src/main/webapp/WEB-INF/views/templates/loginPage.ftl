@@ -71,7 +71,7 @@
 </style>
 <head>
 
-    <script type="text/javascript">
+    <#--<script type="text/javascript">
 
         function valid(form) {
             var fail = false;
@@ -90,7 +90,7 @@
 
         }
 
-</script>
+</script>-->
         </head>
 <body background=images/walletHomePage.png">
 
@@ -98,17 +98,21 @@
 <br><br><br>
 
 <div id = "margin2">
-<form id="form" action="/loginPage" method="post"  class="form-group" onsubmit="valid(this)">
+<form id="form" action="/loginPage" method="post"  class="form-group" onsubmit="valid(this) ">
 
     <div class="container">
-        <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="name" id="name">
+        <label><b>Login</b></label>
+        <input type="text" placeholder="Enter login" name="name" id="name" >
 
         <label><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="password" id="password">
 
         <button type="submit">Login</button>
-        <#--<input type="checkbox" checked="checked"> Remember me-->
+        <p> </p>
+
+        <form action="/registration" method="get" name="registration" class="form-group">
+            <button type="submit">Registration</button>
+        </form>
     </div>
 </form>
 </div>

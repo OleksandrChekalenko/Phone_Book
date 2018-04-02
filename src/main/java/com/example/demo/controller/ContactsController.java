@@ -27,6 +27,7 @@ public class ContactsController {
 
     @GetMapping("/contacts")
     public String getAllContacts(Model model, Principal principal) {
+        if (principal == null) return "/loginPage";
         User user = userService.getUserByLogin(principal.getName());
         model.addAttribute("contacts", contactsService.getAll(user.getId_user()));
         return "contactsList";
