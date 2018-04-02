@@ -14,7 +14,7 @@ import java.util.List;
 public class Contacts {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_contact;
     private String sureName;
     private String name;

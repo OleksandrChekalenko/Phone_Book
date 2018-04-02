@@ -1,6 +1,11 @@
 package com.example.demo.controller;
 
+import com.example.demo.entity.Role;
 import com.example.demo.entity.User;
+import com.example.demo.service.RoleService;
+import com.example.demo.service.UserService;
+import com.example.demo.utils.Utils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +19,11 @@ import java.util.List;
  */
 @Controller
 public class HomeController {
+
+    @Autowired
+    private RoleService roleService;
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/")
     public String index() {
@@ -35,5 +45,19 @@ public class HomeController {
         return "errorPage";
     }
 
-    
+    @PostMapping("/newUser")
+    public String createUser(@ModelAttribute User user, Model model) {
+        List<String> errors = Utils.validate(user);
+        if (!errors.isEmpty()) {
+            model.addAttribute("errors", errors);
+            return "registrationPage";
+        } else {
+            userService.save(user);
+            Role role = new Role();
+            role.setName(user.getLogin());
+            role.setRole("ROLE_USER");
+            roleService.save(role);
+            return "susuccessRegistration";
+        }
+    }
 }

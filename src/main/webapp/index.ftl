@@ -37,10 +37,10 @@
 
 </form>
 
-<br><br><br>
+<#--<br><br><br>
 
 <p id="ow">OW (OnlineWallet) - electronic instant messaging system, environment and technology for doing
-    business and e-commerce.</p>
+    business and e-commerce.</p>-->
 
 
 

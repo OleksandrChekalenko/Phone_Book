@@ -37,9 +37,9 @@
             } else {return true}
 
         }
--->
 
-    </script>
+
+    </script>-->
 </head>
 <body class="container" background="images/walletHomePage.png">
 <#include "templates/header3.ftl">
@@ -50,18 +50,20 @@
     <form  id = "form" action="/newUser" method="post" name="user" class="form-group" onsubmit="valid(this)">
 
 
-        <p>Name</p>
-        <input title="Name" type="text" name="name" placeholder="Enter your name" id = "name"/>
-        <p>First name</p>
+        <p>Login</p>
+        <input title="Login" type="text" name="login" placeholder="Enter your login" id = "login"/>
+        <#--<p>First name</p>
         <input title="First name" type="text" name="firstName" placeholder="Enter your first name"/>
         <p>Email</p>
         <input title="Email" type="text" name="email" placeholder="Enter your email"/>
         <p>Phone number</p>
-        <input title="Phone number" type="text" name="phoneNumber" placeholder="Enter your phone nymber">
+        <input title="Phone number" type="text" name="phoneNumber" placeholder="Enter your phone nymber">-->
         <p>Password</p>
-        <input title="Password" type="password" name="password" placeholder="Enter your password">
+        <input title="Password" type="password" name="password" placeholder="Enter your password" id="password">
         <p>rePassword</p>
         <input title="Password" type="password" name="rePassword" placeholder="Repeat password">
+        <p>Full name</p>
+        <input title="Full name" type="text" name="snp" placeholder="Enter your full name"/>
         <input type="submit" name="submit" value="Registration"/>
     </form>
 </div>
