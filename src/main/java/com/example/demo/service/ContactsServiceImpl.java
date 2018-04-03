@@ -3,6 +3,7 @@ package com.example.demo.service;
 import com.example.demo.dao.interfaces.ContactsDao;
 import com.example.demo.entity.Contacts;
 import com.example.demo.service.interfaces.ContactsService;
+import com.example.demo.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -42,4 +43,5 @@ public class ContactsServiceImpl implements ContactsService {
     public List<Contacts> getAll(int user) {
         return contactsDao.getAll(user);
     }
+
 }

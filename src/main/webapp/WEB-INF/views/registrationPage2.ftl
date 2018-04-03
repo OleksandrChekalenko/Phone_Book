@@ -6,44 +6,16 @@
     <meta charset="UTF-8">
     <title>Title(index.ftl)</title>
 
-   <#-- <script type="text/javascript">
-
-        function valid(form) {
-            var fail = false;
-            var name = form.name.value;
-            var firstName = form.firstName.value;
-            var email = form.email.value;
-            var password = form.password.value;
-            var rePassword = form.rePassword.value;
-            var mailValid =  /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
-            if (name === "" || name === " ")
-                fail = "You did not enter your name.";
-            else if (firstName === "" || firstName === " ")
-                fail = "You did not enter your fist name.";
-            else if ( email === "")
-                fail = "You did not enter your email.";
-            else if (mailValid.test(email) === false)
-                        fail = "Wrong mail";
-            else if ( password === "")
-                fail = "You did not enter your password.";
-            else if ( password !== rePassword)
-                fail = "You did not enter the same password.";
-
-
-            if (fail){
-                alert(fail);
-                return false;
-            } else {return true}
-
-        }
-
-
-    </script>-->
 </head>
 <body class="container" background="images/walletHomePage.png">
 <#include "templates/header3.ftl">
 <br><br><br>
+<#list errors as error>
+<tr>
+    <td><p>     </p>${error}</td>
+</tr>
+</#list>
+<br>
 <h1> REGISTRATION</h1>
 <br>
 <div id="margin">

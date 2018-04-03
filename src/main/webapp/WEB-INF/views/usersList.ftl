@@ -53,22 +53,3 @@
 </div>
 </body>
 </html>
-<#--
-
-
-
-<#list wallets as wallet>
-<tr>
-
-    <td>${wallet.number}</td>
-    <td>${wallet.type}</td>
-    <td><a href="/delete/${wallet.number}">Delete</a>
-
-    </td>
-</tr>
-</#list>
-</table>
-</div>
-<#include "templates/createContactForm.ftl"/>
-</body>
-</html>-->

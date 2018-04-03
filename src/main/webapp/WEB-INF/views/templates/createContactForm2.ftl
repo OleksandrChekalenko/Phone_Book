@@ -1,6 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WalletData</title>
+</head>
+<body class="container">
+<#include "header3.ftl">
+<br>
+<br>
+<br>
+<div id="margin">
+<#list errors as error>
+<tr>
+    <td><p>     </p>${error}</td>
+</tr>
+</#list>
+<#include "createContactForm.ftl">
+</div>
+</body>
+</html>
+
+<#--
+<#include "header3.ftl">
+<br>
 <br>
 <br>
 
+<#list errors as error>
+<tr>
+    <td>${error}</td>
+</tr>
+</#list>
+<br>
 
 <form action="/contact/newContact" method="post" name="contact" class="form-group" >
 
@@ -16,25 +47,14 @@
         <input title="Home number" type="text" name="homeNumber" placeholder="Enter contact home number" id = "homeNumber"/>
     <p>Address</p>
         <input title="Address" type="text" name="adds" placeholder="Enter contact address" id = "adds"/>
-    <p>Email*</p>
+    <p>Email</p>
         <input title="Email" type="text" name="email" placeholder="Enter contact email" id = "email"/>
     <input type="submit" value="Add"/>
 </form>
 
-<p>* - required fields to fill </p>
+<p>* - be sure to enter the data</p>
 <br>
+-->
 
 
 
-<#--<li><a href=#>Menu 2</a>
-    <ul class="submenu">
-        <li><a href=#>Sudmenu 2</a></li>
-        <li><a href=#>Sudmenu 2</a></li>
-        <li><a href=#>Sudmenu 2</a></li>
-    </ul>-->
-<#--Delete 2
-<form action="/delete" method="post" class="form-group">
-    Wallet number:
-    <input title="number" number="number"/>
-    <input type="submit" title="OK" value="Delete"/>
-</form>-->

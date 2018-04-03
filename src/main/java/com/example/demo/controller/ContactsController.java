@@ -4,12 +4,14 @@ import com.example.demo.entity.Contacts;
 import com.example.demo.entity.User;
 import com.example.demo.service.interfaces.ContactsService;
 import com.example.demo.service.interfaces.UserService;
+import com.example.demo.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.List;
 
 /**
  * Created by Cagy on 4/2/2018.
@@ -39,12 +41,18 @@ public class ContactsController {
     }
 
     @PostMapping("/newContact")
-    public String addNewContact(@ModelAttribute Contacts contact, Principal principal) {
+    public String addNewContact(@ModelAttribute Contacts contact, Principal principal, Model model) {
         User user = userService.getUserByLogin(principal.getName());
-        user.getContactsList().add(contact);
-        contact.setUser(user);
-        userService.update(user);
-        return "redirect:/contact/contacts";
+        List<String> errors = Utils.validateContact(contact);
+        if (!errors.isEmpty()) {
+            model.addAttribute("errors", errors);
+            return "createContactForm2";
+        } else {
+            user.getContactsList().add(contact);
+            contact.setUser(user);
+            userService.update(user);
+            return "redirect:/contact/contacts";
+        }
     }
 
     @GetMapping("contacts/delete/{id_contact}")
