@@ -18,23 +18,27 @@
     <table class="table table-striped">
         <tr>
 
-            <th><form action="/wallet/wallets/sortByNumber" method="get" name="contacts" class="form-group">
+            <th><form action="/contact/contacts/sortContactsByName" method="get" name="contacts" class="form-group">
                 <button type="submit">Full name</button>
             </form>
+                <form action="/contact/contacts/sortContactsBySurName" method="get" name="contacts" class="form-group">
+                    <button type="submit">Surname</button>
+                </form>
+
             </th>
-            <th><form action="/wallet/wallets/sortByType" method="get" name="contacts" class="form-group">
+            <th><form action="/contact/contacts/sortContactsByNumber" method="get" name="contacts" class="form-group">
                 <button type="submit">Mobile number</button>
             </form>
             </th>
-            <th><form action="/wallet/wallets/sortByFunds" method="get" name="contacts" class="form-group">
+            <th><form action="" method="get" name="contacts" class="form-group">
                 <button type="submit">Home number</button>
             </form>
             </th>
-            <th><form action="/wallet/wallets/sortByCurrency" method="get" name="contacts" class="form-group">
+            <th><form action="" method="get" name="contacts" class="form-group">
                 <button  type="submit">Address</button>
             </form>
             </th>
-            <th><form action="/wallet/wallets/sortByCurrency" method="get" name="contacts" class="form-group">
+            <th><form action="/" method="get" name="contacts" class="form-group">
                 <button  type="submit">Email</button>
             </form>
             </th>

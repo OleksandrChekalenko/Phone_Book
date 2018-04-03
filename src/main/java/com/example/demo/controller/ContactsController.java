@@ -77,5 +77,21 @@ public class ContactsController {
         contactsService.update(contact);
         return "redirect:/contact/contacts";
     }
+
+    @GetMapping("contacts/sortContactsByName")
+    public String sortContactsByName(Model model, Principal principal) {
+        model.addAttribute("contacts", contactsService.sortContactsByName(contactsService.getAll(userService.getUserByLogin(principal.getName()).getId_user())));
+        return "redirect:/contact/contacts";
+    }
+    @GetMapping("contacts/sortContactsBySurName")
+    public String sortContactsBySurName(Model model, Principal principal) {
+        model.addAttribute("contacts", contactsService.sortContactsBySurName(contactsService.getAll(userService.getUserByLogin(principal.getName()).getId_user())));
+        return "redirect:/contact/contacts";
+    }
+    @GetMapping("contacts/sortContactsByNumber")
+    public String sortContactsByNumber(Model model, Principal principal) {
+        model.addAttribute("contacts", contactsService.sortContactsByNumber(contactsService.getAll(userService.getUserByLogin(principal.getName()).getId_user())));
+        return "redirect:/contact/contacts";
+    }
 }
 

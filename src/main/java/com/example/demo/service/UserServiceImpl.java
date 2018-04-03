@@ -36,33 +36,22 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserByName(String name) {
-        return null;
-    }
-
-    @Override
     public User getUserByLogin(String login) {
         return userDao.getUserByLogin(login);
     }
 
-
     @Override
-    public List<User> sortUsersById(List<User> usersList) {
+    public List<User> sortContactsByName(List<User> list) {
         return null;
     }
 
     @Override
-    public List<User> sortUsersByName(List<User> usersList) {
+    public List<User> sortContactsBySurName(List<User> list) {
         return null;
     }
 
     @Override
-    public List<User> sortUsersByFirstName(List<User> usersList) {
-        return null;
-    }
-
-    @Override
-    public List<User> sortUsersByEmail(List<User> usersList) {
+    public List<User> sortContactsByNumber(List<User> list) {
         return null;
     }
 

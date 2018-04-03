@@ -7,6 +7,8 @@ import com.example.demo.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -20,6 +22,24 @@ public class ContactsServiceImpl implements ContactsService {
     @Override
     public void save(Contacts contacts) {
         contactsDao.save(contacts);
+    }
+
+    @Override
+    public List<Contacts> sortContactsByName(List<Contacts> list) {
+        Collections.sort(list, Comparator.comparing(Contacts::getName));
+        return list;
+    }
+
+    @Override
+    public List<Contacts> sortContactsBySurName(List<Contacts> list) {
+        Collections.sort(list, Comparator.comparing(Contacts::getSurName));
+        return list;
+    }
+
+    @Override
+    public List<Contacts> sortContactsByNumber(List<Contacts> list) {
+        Collections.sort(list, Comparator.comparing(Contacts::getMobileNumber));
+        return list;
     }
 
     @Override
