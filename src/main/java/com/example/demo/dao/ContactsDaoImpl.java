@@ -36,8 +36,9 @@ public class ContactsDaoImpl implements ContactsDao {
     }
 
     @Override
-    public Contacts update(Contacts entity) {
-        return null;
+    @Transactional
+    public Contacts update(Contacts contact) {
+        return entityManager.merge(contact);
     }
 
     @Override

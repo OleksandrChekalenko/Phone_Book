@@ -28,7 +28,7 @@ public class Utils {
         Pattern patternEmail = Pattern.compile("^((\\w|[-+])+(\\w-]+)*@[\\w-]+((\\.[\\d\\p{Alpha}]+)*(\\.\\p{Alpha}{2,})*)*)$");
         Matcher matcherNumber = patternNumber.matcher(number);
         Matcher matcherEmail = patternEmail.matcher(email);
-        if (contact.getSureName().length() < 4) errors.add("    Surname shorter than 4 characters.   ");
+        if (contact.getSurName().length() < 4) errors.add("    Surname shorter than 4 characters.   ");
         if (contact.getName().length() < 4) errors.add("Name shorter than 4 characters.   ");
         if (contact.getPatronymic().length() < 4) errors.add("Patronymic shorter than 4 characters.   ");
         if (!matcherNumber.matches()) errors.add("Wrong mobile number.   ");

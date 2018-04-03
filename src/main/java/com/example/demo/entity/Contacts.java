@@ -2,9 +2,6 @@ package com.example.demo.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Cagy on 4/1/2018.
@@ -16,7 +13,7 @@ public class Contacts {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_contact;
-    private String sureName;
+    private String surName;
     private String name;
     private String patronymic;
     private String mobileNumber;
@@ -30,15 +27,15 @@ public class Contacts {
     public Contacts() {
     }
 
-    public Contacts(@NotNull String sureName, @NotNull String name, @NotNull String patronymic, @NotNull String mobileNumber) {
-        this.sureName = sureName;
+    public Contacts(@NotNull String surName, @NotNull String name, @NotNull String patronymic, @NotNull String mobileNumber) {
+        this.surName = surName;
         this.name = name;
         this.patronymic = patronymic;
         this.mobileNumber = mobileNumber;
     }
 
-    public Contacts(@NotNull String sureName, @NotNull String name, @NotNull String patronymic, @NotNull String mobileNumber, String homeNumber, String adds, String email, User user_id) {
-        this.sureName = sureName;
+    public Contacts(@NotNull String surName, @NotNull String name, @NotNull String patronymic, @NotNull String mobileNumber, String homeNumber, String adds, String email, User user_id) {
+        this.surName = surName;
         this.name = name;
         this.patronymic = patronymic;
         this.mobileNumber = mobileNumber;
@@ -56,12 +53,12 @@ public class Contacts {
         this.id_contact = id_contact;
     }
 
-    public String getSureName() {
-        return sureName;
+    public String getSurName() {
+        return surName;
     }
 
-    public void setSureName(String sureName) {
-        this.sureName = sureName;
+    public void setSurName(String surName) {
+        this.surName = surName;
     }
 
     public String getName() {
@@ -124,7 +121,7 @@ public class Contacts {
     public String toString() {
         final StringBuffer sb = new StringBuffer("Contacts{");
         sb.append("id_contact=").append(id_contact);
-        sb.append(", sureName='").append(sureName).append('\'');
+        sb.append(", surName='").append(surName).append('\'');
         sb.append(", name='").append(name).append('\'');
         sb.append(", patronymic='").append(patronymic).append('\'');
         sb.append(", mobileNumber='").append(mobileNumber).append('\'');

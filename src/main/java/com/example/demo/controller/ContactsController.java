@@ -66,5 +66,16 @@ public class ContactsController {
         return "redirect:/contact/contacts";
     }
 
+    @GetMapping("edit/{id_contact}")
+    public String editPage(@PathVariable("id_contact") int id, Model model) {
+        model.addAttribute("contacts", contactsService.getById(id));
+        return "editContact";
+    }
+    @PostMapping("/update")
+    public String update(@ModelAttribute Contacts contact, Principal principal) {
+        contact.setUser(userService.getUserByLogin(principal.getName()));
+        contactsService.update(contact);
+        return "redirect:/contact/contacts";
+    }
 }
 

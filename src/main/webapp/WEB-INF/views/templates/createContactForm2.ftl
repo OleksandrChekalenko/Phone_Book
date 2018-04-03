@@ -36,7 +36,7 @@
 <form action="/contact/newContact" method="post" name="contact" class="form-group" >
 
     <p>Surname*</p>
-        <input title="Surename" type="text" name="sureName" placeholder="Enter contact surname" id = "surename"/>
+        <input title="Surname" type="text" name="surName" placeholder="Enter contact surname" id = "surname"/>
     <p>Name*</p>
         <input title="Name" type="text" name="name" placeholder="Enter contact name" id = "name"/>
     <p>Patronymic*</p>

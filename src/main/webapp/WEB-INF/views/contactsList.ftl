@@ -41,17 +41,21 @@
             <th>
                 <p>Button</p>
             </th>
+            <th>
+                <p>Button</p>
+            </th>
 
         </tr>
     <#list contacts as contact>
         <tr>
         <#--<td><a href="/wallet/${wallet.id}">${wallet.id}</a></td>-->
-            <td>${contact.sureName} ${contact.name} ${contact.patronymic}</td>
+            <td>${contact.surName} ${contact.name} ${contact.patronymic}</td>
             <td>${contact.mobileNumber}</td>
             <td>${contact.homeNumber}</td>
             <td>${contact.adds}</td>
             <td>${contact.email}</td>
             <td><a href="contacts/delete/${contact.id_contact?c}">Delete</a>
+            <td><a href="edit/${contact.id_contact?c}">Edit</a>
             </td>
         </tr>
     </#list>
