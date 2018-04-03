@@ -30,6 +30,10 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    @Override
+    public List<User> getAll() {
+        return userDao.getAll();
+    }
 
     @Override
     public User getUserByName(String name) {
@@ -41,10 +45,6 @@ public class UserServiceImpl implements UserService {
         return userDao.getUserByLogin(login);
     }
 
-    @Override
-    public List<User> getAll() {
-        return null;
-    }
 
     @Override
     public List<User> sortUsersById(List<User> usersList) {

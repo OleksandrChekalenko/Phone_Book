@@ -20,6 +20,7 @@ import java.util.List;
 @Controller
 public class HomeController {
 
+
     @Autowired
     private RoleService roleService;
     @Autowired
@@ -47,7 +48,12 @@ public class HomeController {
 
     @PostMapping("/newUser")
     public String createUser(@ModelAttribute User user, Model model) {
+
         List<String> errors = Utils.validateUser(user);
+        for (User users : userService.getAll()) {
+            if (users.getLogin().equals(user.getLogin()))
+                errors.add("That login already in use. Please choose another login.");
+        }
         if (!errors.isEmpty()) {
             model.addAttribute("errors", errors);
             return "registrationPage2";

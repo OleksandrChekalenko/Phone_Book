@@ -26,3 +26,8 @@ CREATE TABLE `contact`.`roles` (
   `name` VARCHAR(45) NULL,
   `role` VARCHAR(45) NULL,
   PRIMARY KEY (`id`));
+
+
+#Test DB
+
+CREATE SCHEMA `contacttestdb` ;

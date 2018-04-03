@@ -2,6 +2,9 @@ package com.example.demo.utils;
 
 import com.example.demo.entity.Contacts;
 import com.example.demo.entity.User;
+import com.example.demo.service.UserServiceImpl;
+import com.example.demo.service.interfaces.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,11 +15,15 @@ import java.util.regex.Pattern;
  * Created by Cagy on 12/6/2017.
  */
 public class Utils {
+
+
     public static List<String> validateUser(User user) {
-        List<String> errors = new ArrayList<>();
-        if (user.getLogin().replaceAll("[^\\w\\s]","").length() <= 3) errors.add("Your login less than 3 characters. ");
-        if (user.getPassword().length() <= 5) errors.add("Ypu password too short. ");
-        if (user.getSnp().length() <= 5) errors.add("You full name too short.");
+
+            List<String> errors = new ArrayList<>();
+            if (user.getLogin().replaceAll("[^\\w\\s]", "").length() <= 3)  errors.add("Your login less than 3 characters. ");
+            if (user.getPassword().length() <= 5) errors.add("Ypu password too short. ");
+            if (user.getSnp().length() <= 5) errors.add("You full name too short.");
+
         return errors;
     }
 
