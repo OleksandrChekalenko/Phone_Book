@@ -5,6 +5,7 @@ import com.example.demo.config.SpringConfig;
 import com.example.demo.entity.Contacts;
 import com.example.demo.entity.Role;
 import com.example.demo.entity.User;
+import com.example.demo.service.interfaces.RoleService;
 import com.example.demo.service.interfaces.UserService;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -26,6 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 import static org.junit.Assert.*;
@@ -45,6 +47,8 @@ public class ContactsControllerTest {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private RoleService roleService;
 
     @Before
     public void setup() {
@@ -55,28 +59,23 @@ public class ContactsControllerTest {
     @Test
     public void getAllContacts() throws Exception {
 
-        /*User user = new User("testttest", "111111", "asdsdfasd");
+        User user = new User("getAllContacts", "111111", "asdsdfasd");
         List<Contacts> contacts =new ArrayList<>();
         contacts.add(new Contacts("David", "Den", "D",
-                            "+380734160880"));
+                "+380734160880"));
         user.setContactsList(contacts);
         userService.save(user);
         Role role = new Role();
         role.setName(user.getLogin());
         role.setRole("ROLE_USER");
-        Principal principal = () -> "TEST_PRINCIPAL";
-        MvcResult result = mockMvc.perform(get("/loginPage")
-                .param("name",user.getLogin())
+        roleService.save(role);
+
+        mockMvc.perform(get("/loginPage")
+                .param("login", user.getLogin())
                 .param("password", user.getPassword()))
-                .andReturn();
+                .andExpect(redirectedUrl(null))
+                .andExpect(status().isOk()).andExpect(view().name("loginPage"));
 
-
-        mockMvc.perform(get("/contact/contacts").param("name",user.getLogin())
-                .param("password", user.getPassword()))
-                .andExpect(status().isOk())
-                .andExpect(view().name("contactList"));*/
-
-       // mockMvc.perform(MockMvcRequestBuilders.get())
     }
 
     @Test
