@@ -49,7 +49,7 @@ public class JpaConfigTest {
     @Bean
     public DataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setUrl("jdbc:mysql://localhost:3306/contacttestdb?useSSL=false&createDatabaseIfNotExist=true");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/contact?useSSL=false&createDatabaseIfNotExist=true");
         dataSource.setUsername(username);
         dataSource.setPassword(password);
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");

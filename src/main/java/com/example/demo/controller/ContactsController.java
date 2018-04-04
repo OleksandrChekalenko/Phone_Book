@@ -57,7 +57,7 @@ public class ContactsController {
 
     @GetMapping("contacts/delete/{id_contact}")
     public String deleteContact(@PathVariable("id_contact") int id_contact, Principal principal) {
-        User user = userService.getUserByLogin(principal.getName());
+       // User user = userService.getUserByLogin(principal.getName());
         Contacts contact = contactsService.getById(id_contact);
         deletedContactId = contact.getId_contact();
         contact.setUser(null);

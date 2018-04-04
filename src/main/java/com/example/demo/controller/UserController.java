@@ -5,12 +5,14 @@ import com.example.demo.entity.User;
 import com.example.demo.service.interfaces.RoleService;
 import com.example.demo.service.interfaces.UserService;
 import com.example.demo.utils.Utils;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -26,9 +28,16 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
+
     @GetMapping("/")
     public String index() {
         return "index";
+    }
+
+    @GetMapping("/registration")
+    public String showRegistrationPage() {
+        return "registrationPage";
     }
 
     @GetMapping("/loginPage")
@@ -36,10 +45,6 @@ public class UserController {
         return "loginPage";
     }
 
-    @PostMapping("/login")
-    public String login(@ModelAttribute User user) {
-        return "index";
-    }
 
     @GetMapping("/error_page")
     public String errorPage() {

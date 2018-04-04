@@ -14,9 +14,8 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-/**
- * Created by Cagy on 4/4/2018.
- */
+
+
 public class UserDaoImplTest {
 
     @Autowired
@@ -37,6 +36,7 @@ public class UserDaoImplTest {
         when(mockedUserDao.getAll()).thenReturn(Arrays.asList(user1, user2));
         when(mockedUserDao.getUserByLogin("44444")).thenReturn(user1);
         when(mockedUserDao.update(user2)).thenReturn(user2);
+        when(mockedUserDao.getById(1)).thenReturn(null);
     }
 
     @Test
@@ -54,7 +54,7 @@ public class UserDaoImplTest {
 
     @Test
     public void getById() throws Exception {
-        //empty
+        assertEquals(null, mockedUserDao.getById(1));
     }
 
     @Test

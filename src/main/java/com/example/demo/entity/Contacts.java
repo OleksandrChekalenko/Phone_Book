@@ -34,20 +34,8 @@ public class Contacts {
         this.mobileNumber = mobileNumber;
     }
 
-    public Contacts(@NotNull String surName, @NotNull String name, @NotNull String patronymic, @NotNull String mobileNumber, String homeNumber, String adds, String email, User user_id) {
-        this.surName = surName;
-        this.name = name;
-        this.patronymic = patronymic;
-        this.mobileNumber = mobileNumber;
-        this.homeNumber = homeNumber;
-        this.adds = adds;
-        this.email = email;
-       // this.user_id = user_id;
-    }
-
     public int getId_contact() {
-        return id_contact;
-    }
+        return id_contact;}
 
     public void setId_contact(int id_contact) {
         this.id_contact = id_contact;
@@ -115,21 +103,5 @@ public class Contacts {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    @Override
-    public String toString() {
-        final StringBuffer sb = new StringBuffer("Contacts{");
-        sb.append("id_contact=").append(id_contact);
-        sb.append(", surName='").append(surName).append('\'');
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", patronymic='").append(patronymic).append('\'');
-        sb.append(", mobileNumber='").append(mobileNumber).append('\'');
-        sb.append(", homeNumber='").append(homeNumber).append('\'');
-        sb.append(", adds='").append(adds).append('\'');
-        sb.append(", email='").append(email).append('\'');
-        //sb.append(", user_id=").append(user_id);
-        sb.append('}');
-        return sb.toString();
     }
 }

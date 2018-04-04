@@ -6,7 +6,6 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -24,12 +23,10 @@ public class User implements Serializable {
     private String snp;
     @Column(nullable = false)
     private int enabled = 1;
-    @OneToMany( cascade = CascadeType.ALL, targetEntity = Contacts.class, mappedBy = "user", fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, targetEntity = Contacts.class, mappedBy = "user", fetch = FetchType.EAGER)
     private List<Contacts> contactsList = new ArrayList<>();
 
-    public User() {
-
-    }
+    public User() {    }
 
     public User(@NotNull @UniqueElements String login, @NotNull String password, @NotNull String snp) {
         this.login = login;
@@ -37,6 +34,13 @@ public class User implements Serializable {
         this.snp = snp;
     }
 
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
+    }
+
+    public void setSnp(String snp) {
+        this.snp = snp;
+    }
 
     public int getEnabled() {
         return enabled;
@@ -46,12 +50,12 @@ public class User implements Serializable {
         this.enabled = enabled;
     }
 
-    public int getId_user() {
-        return id_user;
+    public void setContactsList(List<Contacts> contactsList) {
+        this.contactsList = contactsList;
     }
 
-    public void setId_user(int id_user) {
-        this.id_user = id_user;
+    public int getId_user() {
+        return id_user;
     }
 
     public String getLogin() {
@@ -74,26 +78,8 @@ public class User implements Serializable {
         return snp;
     }
 
-    public void setSnp(String snp) {
-        this.snp = snp;
-    }
-
     public List<Contacts> getContactsList() {
         return contactsList;
     }
 
-    public void setContactsList(List<Contacts> contactsList) {
-        this.contactsList = contactsList;
-    }
-
-    @Override
-    public String toString() {
-        final StringBuffer sb = new StringBuffer("User{");
-        sb.append("id_user=").append(id_user);
-        sb.append(", login='").append(login).append('\'');
-        sb.append(", password='").append(password).append('\'');
-        sb.append(", snp='").append(snp).append('\'');
-        sb.append('}');
-        return sb.toString();
-    }
 }
