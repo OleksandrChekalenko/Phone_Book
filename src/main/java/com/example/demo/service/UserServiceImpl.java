@@ -21,13 +21,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getById(int id) {
-        return null;
-    }
-
-    @Override
-    public void deleteContact(int id) {
-
+    public void update(User user) {
+        userDao.update(user);
     }
 
     @Override
@@ -57,11 +52,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void delete(int id) {
-
+    }
+    @Override
+    public User getById(int id) {
+        return null;
     }
 
     @Override
-    public void update(User user) {
-        userDao.update(user);
+    public void deleteContact(int id) {
     }
+
 }

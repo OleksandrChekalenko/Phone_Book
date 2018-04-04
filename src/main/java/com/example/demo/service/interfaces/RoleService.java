@@ -8,9 +8,9 @@ import com.example.demo.entity.Role;
  */
 public interface RoleService extends IService<Role>{
 
-    //void save(Role role);
+
 
     void delete(String name);
 
-    Role getRoleByName(String name);
+    //Role getRoleByName(String name);
 }

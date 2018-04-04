@@ -23,22 +23,10 @@ public class UserDaoImpl implements UserDao {
     entityManager.persist(user);
     }
 
-
-
-    @Override
-    public void deleteById(int id_contact) {
-
-    }
-
     @Override
     @Transactional
     public User update(User user) {
         return entityManager.merge(user);
-    }
-
-    @Override
-    public User getById(int id) {
-        return null;
     }
 
     @Override
@@ -47,13 +35,22 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User getUsersById(int id) {
-        return null;
-    }
-
-    @Override
     public User getUserByLogin(String login) {
         return entityManager.createQuery("SELECT u from User u where login = '" + login + "'", User.class)
                 .getSingleResult();
     }
+
+    @Override
+    public User getById(int id) {
+        return null;
+    }
+
+    @Override
+    public void deleteById(int id_contact) {    }
+
+    @Override
+    public User getUsersById(int id) {
+        return null;
+    }
+
 }

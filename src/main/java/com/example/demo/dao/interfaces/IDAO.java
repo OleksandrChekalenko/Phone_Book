@@ -14,16 +14,3 @@ public interface IDAO<T> {
 
     T getById(int id);
 }
-/*public interface IDAO<T> {
-
-    void save(T entity);
-
-    T getById(int id);
-
-    Collection<T> getAll();
-
-    void update(T entity);
-
-    void deleteContact(T entity);
-}
-*/

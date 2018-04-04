@@ -8,9 +8,5 @@ import com.example.demo.entity.Role;
  */
 public interface RoleDao extends IDAO<Role> {
 
-    //void save(Role role);
-
-   // void delete(Role role);
-
     Role getRoleByName(String name);
 }
