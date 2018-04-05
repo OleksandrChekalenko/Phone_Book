@@ -1,11 +1,8 @@
 package com.example.demo.controller;
 
-        import com.example.demo.DemoApplication;
-        import com.example.demo.entity.Role;
-        import com.example.demo.entity.User;
+        import com.example.demo.Application;
         import com.example.demo.service.interfaces.RoleService;
         import com.example.demo.service.interfaces.UserService;
-        import com.example.demo.utils.Utils;
         import org.junit.Before;
         import org.junit.FixMethodOrder;
         import org.junit.Test;
@@ -19,8 +16,6 @@ package com.example.demo.controller;
         import org.springframework.test.web.servlet.setup.MockMvcBuilders;
         import org.springframework.web.context.WebApplicationContext;
 
-        import java.util.List;
-
         import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
         import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
         import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
@@ -29,7 +24,7 @@ package com.example.demo.controller;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = DemoApplication.class)
+@ContextConfiguration(classes = Application.class)
 @SpringBootTest
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class UserControllerTest {

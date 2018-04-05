@@ -1,6 +1,6 @@
 package com.example.demo.dao;
 
-import com.example.demo.DemoApplication;
+import com.example.demo.Application;
 import com.example.demo.entity.User;
 import com.example.demo.service.interfaces.UserService;
 import org.junit.FixMethodOrder;
@@ -18,7 +18,7 @@ import static org.junit.Assert.assertEquals;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = DemoApplication.class)
+@ContextConfiguration(classes = Application.class)
 @SpringBootTest
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class UserDaoImplTest {
