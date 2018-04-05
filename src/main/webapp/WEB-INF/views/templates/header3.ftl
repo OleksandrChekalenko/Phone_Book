@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Online Wallet</title>
+<title>Phone Book</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -45,16 +45,6 @@ tr:nth-child(even) {
         <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
         <a href="/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
         <a href="/contact/contacts" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MyCONTACTS</a>
-        <#--<div class="w3-dropdown-hover w3-hide-small">
-            <button class="w3-padding-large w3-button" title="More">PAYMENTS <i class="fa fa-caret-down"></i></button>
-            <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                &lt;#&ndash;<a href="/payments/refill" class="w3-bar-item w3-button">Refill</a>&ndash;&gt;
-                <a href="/payments/transfer" class="w3-bar-item w3-button">Transfer</a>
-                <a href="/payments/exchange" class="w3-bar-item w3-button">Exchange</a>
-                &lt;#&ndash;<a href="/payments/archive" class="w3-bar-item w3-button">Archive</a>&ndash;&gt;
-
-            </div>
-        </div>-->
         <a href="/about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
         <a href="/logout" class="w3-padding-large w3-hover-red w3-hide-small w3-right">LOGOUT</a>
     </div>

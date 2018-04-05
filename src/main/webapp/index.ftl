@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title(index.ftl)</title>
+    <title>Phone Book</title>
     <style>
 
         #ow {
@@ -37,13 +37,5 @@
 
 </form>
 
-<#--<br><br><br>
-
-<p id="ow">OW (OnlineWallet) - electronic instant messaging system, environment and technology for doing
-    business and e-commerce.</p>-->
-
-
-
-<#--<p class="fig"><img src="images/walletHomePage.png" alt="" ></p>-->
 </body>
 </html>

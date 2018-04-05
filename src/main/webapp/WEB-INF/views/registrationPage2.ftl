@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title(index.ftl)</title>
+    <title>Registration</title>
 
 </head>
 <body class="container" background="images/walletHomePage.png">
