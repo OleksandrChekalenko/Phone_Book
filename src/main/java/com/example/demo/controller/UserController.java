@@ -28,6 +28,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    public static final String ROLE_USER = "ROLE_USER";
 
 
     @GetMapping("/")
@@ -64,9 +65,7 @@ public class UserController {
             return "registrationPage2";
         } else
             userService.save(user);
-            Role role = new Role();
-            role.setName(user.getLogin());
-            role.setRole("ROLE_USER");
+            Role role = new Role(user.getLogin(), ROLE_USER );
             roleService.save(role);
             return "susuccessRegistration";
     }

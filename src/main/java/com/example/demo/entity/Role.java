@@ -12,6 +12,9 @@ public class Role {
     private String name;
     private String role;
 
+    public Role(String name, String role) {
+    }
+
     public int getId() {
         return id;
     }

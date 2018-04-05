@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
  */
 public class RoleTest {
 
-    private Role role = new Role();
+    private Role role = new Role("RoleTest", "ROLE_USER");
     private String tmpS = "Admin";
     private int tmpI = 1;
 

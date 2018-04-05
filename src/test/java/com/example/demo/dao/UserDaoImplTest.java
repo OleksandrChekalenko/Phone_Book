@@ -1,75 +1,66 @@
 package com.example.demo.dao;
 
-import com.example.demo.dao.interfaces.UserDao;
+import com.example.demo.DemoApplication;
 import com.example.demo.entity.User;
 import com.example.demo.service.interfaces.UserService;
-import org.junit.BeforeClass;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.junit.Assert.assertEquals;
 
 
-
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = DemoApplication.class)
+@SpringBootTest
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class UserDaoImplTest {
+
+    private User user;
 
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private static UserDaoImpl mockedUserDao;
-    private static User user1;
-    private static User user2;
-
-    @BeforeClass
-    public static void setUp() {
-        mockedUserDao = mock(UserDaoImpl.class);
-
-        user1 = new User("444444", "111111", "444 444 444");
-        user1 = new User("555555", "111111", "555 555 555");
-
-        when(mockedUserDao.getAll()).thenReturn(Arrays.asList(user1, user2));
-        when(mockedUserDao.getUserByLogin("44444")).thenReturn(user1);
-        when(mockedUserDao.update(user2)).thenReturn(user2);
-        when(mockedUserDao.getById(1)).thenReturn(null);
-    }
-
     @Test
     public void save() throws Exception {
-    }
-
-    @Test
-    public void deleteById() throws Exception {
-        //empty
+        user = new User("testSave", "111111", "snp");
+        userService.save(user);
+        assertEquals(user, user);
     }
 
     @Test
     public void update() throws Exception {
+        user = new User("testUpdate", "111111", "snp");
+        User userOrig = user;
+        user.setLogin("testUpdate2");
+        userService.update(user);
+        assertEquals(userOrig.getId_user(), 0);
     }
 
     @Test
     public void getById() throws Exception {
-        assertEquals(null, mockedUserDao.getById(1));
+        user = userService.getById(1);
+        assertEquals(null, user);
     }
 
     @Test
     public void getAll() throws Exception {
-        List<User> allUsers = mockedUserDao.getAll();
-        assertEquals(2, allUsers.size());
-    }
-
-    @Test
-    public void getUsersById() throws Exception {
-        //empty
+        List<User> userList = userService.getAll();
+        assertEquals(userList, userList);
     }
 
     @Test
     public void getUserByLogin() throws Exception {
+        user = new User("getUserByLogin", "111111", "snpsnpsnp");
+        userService.save(user);
+        assertEquals(user, user);
     }
 
 }

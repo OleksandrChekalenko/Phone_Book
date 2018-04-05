@@ -21,15 +21,8 @@ public class RoleDaoImpl implements RoleDao {
         entityManager.persist(role);
     }
 
-    /*@Override
-    public void delete(Role role) {
-        entityManager.remove(role);
-    }*/
-
     @Override
-    public void deleteById(int id_contact) {
-
-    }
+    public void deleteById(int id_contact) {  }
 
     @Override
     public Role update(Role entity) {
@@ -46,11 +39,4 @@ public class RoleDaoImpl implements RoleDao {
         return entityManager.createQuery("SELECT r FROM role r WHERE name =:name", Role.class)
                 .setParameter("name",name).getSingleResult();
     }
-
-    /*@Override
-    public Users getUsersById(int id) {
-        return entityManager.createQuery("SELECT u FROM Users u WHERE id=:id", Users.class)
-                .setParameter("id", id)
-                .getSingleResult();
-    }*/
 }
