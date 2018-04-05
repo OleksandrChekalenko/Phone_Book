@@ -34,6 +34,14 @@ public class Contacts {
         this.mobileNumber = mobileNumber;
     }
 
+    public Contacts(String surName, String name, String patronymic, String mobileNumber, String email) {
+        this.surName = surName;
+        this.name = name;
+        this.patronymic = patronymic;
+        this.mobileNumber = mobileNumber;
+        this.email = email;
+    }
+
     public int getId_contact() {
         return id_contact;}
 

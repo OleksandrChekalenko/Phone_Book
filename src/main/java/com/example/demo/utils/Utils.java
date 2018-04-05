@@ -2,9 +2,6 @@ package com.example.demo.utils;
 
 import com.example.demo.entity.Contacts;
 import com.example.demo.entity.User;
-import com.example.demo.service.UserServiceImpl;
-import com.example.demo.service.interfaces.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;

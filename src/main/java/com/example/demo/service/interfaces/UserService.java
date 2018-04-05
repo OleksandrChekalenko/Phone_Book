@@ -13,9 +13,5 @@ public interface UserService extends IService<User> {
 
     List<User> getAll();
 
-    //void save(Users user);
-
-    void delete(int id);
-
     void update(User user);
 }

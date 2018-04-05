@@ -22,12 +22,6 @@ public class ContactsDaoImpl implements ContactsDao {
         entityManager.persist(contacts);
     }
 
-    /*@Override
-    @Transactional
-    public void delete(Contacts contact) {
-        entityManager.remove(contact);
-    }*/
-
     @Override
     @Transactional
     public void deleteById(int id_contact) {

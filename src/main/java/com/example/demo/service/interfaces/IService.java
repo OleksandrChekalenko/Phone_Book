@@ -11,10 +11,6 @@ public interface IService<T> {
 
     void save(T entity);
 
-    List<T> sortContactsByName(List<T> list);
-    List<T> sortContactsBySurName(List<T> list);
-    List<T> sortContactsByNumber(List<T> list);
-
     T getById(int id);
 
     void deleteContact(int id);

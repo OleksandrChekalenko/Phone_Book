@@ -11,5 +11,4 @@ public interface IDAO<T> {
 
     T update(T entity);
 
-    T getById(int id);
 }

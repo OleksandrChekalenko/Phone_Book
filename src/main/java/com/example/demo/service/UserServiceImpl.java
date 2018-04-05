@@ -94,25 +94,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> sortContactsByName(List<User> list) {
-        return null;
-    }
-
-    @Override
-    public List<User> sortContactsBySurName(List<User> list) {
-        return null;
-    }
-
-    @Override
-    public List<User> sortContactsByNumber(List<User> list) {
-        return null;
-    }
-
-    @Override
-    public void delete(int id) {
-        userDao.deleteById(id);
-    }
-    @Override
     public User getById(int id) {
         return null;
     }

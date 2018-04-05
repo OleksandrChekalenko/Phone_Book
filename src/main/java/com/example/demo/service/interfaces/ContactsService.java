@@ -11,5 +11,10 @@ public interface ContactsService extends IService<Contacts> {
 
     List<Contacts> getAll(int user);
 
+    List<Contacts> sortContactsByName(List<Contacts> list);
+
+    List<Contacts> sortContactsBySurName(List<Contacts> list);
+
+    List<Contacts> sortContactsByNumber(List<Contacts> list);
 
 }

@@ -36,21 +36,6 @@ public class UserDaoImplTest {
     }
 
     @Test
-    public void update() throws Exception {
-        user = new User("testUpdate", "111111", "snp");
-        User userOrig = user;
-        user.setLogin("testUpdate2");
-        userService.update(user);
-        assertEquals(userOrig.getId_user(), 0);
-    }
-
-    @Test
-    public void getById() throws Exception {
-        user = userService.getById(1);
-        assertEquals(null, user);
-    }
-
-    @Test
     public void getAll() throws Exception {
         List<User> userList = userService.getAll();
         assertEquals(userList, userList);

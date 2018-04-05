@@ -41,19 +41,9 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User getById(int id) {
-        return null;
-    }
-
-    @Override
     @Transactional
     public void deleteById(int id_contact) {
-        entityManager.remove(getById(id_contact));
-    }
-
-    @Override
-    public User getUsersById(int id) {
-        return null;
+        entityManager.remove(id_contact);
     }
 
 }

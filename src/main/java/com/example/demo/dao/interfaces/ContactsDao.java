@@ -10,4 +10,6 @@ import java.util.List;
 public interface ContactsDao extends IDAO<Contacts> {
 
     List<Contacts> getAll(int user);
+
+    Contacts getById(int id);
 }
