@@ -4,6 +4,7 @@ import com.example.demo.Application;
 import com.example.demo.entity.Contacts;
 import com.example.demo.entity.Role;
 import com.example.demo.entity.User;
+import com.example.demo.service.UserServiceImpl;
 import com.example.demo.service.interfaces.RoleService;
 import com.example.demo.service.interfaces.UserService;
 import org.junit.Before;
@@ -44,7 +45,7 @@ public class ContactsControllerTest {
                 "+380734160880"));
         user.setContactsList(contacts);
         userService.save(user);
-        Role role = new Role(user.getLogin(), UserController.ROLE_USER);
+        Role role = new Role(user.getLogin(), UserServiceImpl.ROLE_USER);
                 roleService.save(role);
         return user;
     }

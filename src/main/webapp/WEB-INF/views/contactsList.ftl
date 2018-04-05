@@ -38,7 +38,7 @@
                 <button  type="submit">Address</button>
             </form>
             </th>
-            <th><form action="/" method="get" name="contacts" class="form-group">
+            <th><form action="" method="get" name="contacts" class="form-group">
                 <button  type="submit">Email</button>
             </form>
             </th>

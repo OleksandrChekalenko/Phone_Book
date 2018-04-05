@@ -26,29 +26,15 @@ public class JpaConfig {
     private String username;
     @Value("${spring.datasource.password}")
     private String password;
-    @Value("${spring.jpa.hibernate.ddl-auto}")
-    private String ddlAuto;
-    @Value("${spring.jpa.hibernate.naming-strategy}")
-    private String strategy;
-    @Value("${spring.jpa.properties.hibernate.dialect}")
-    private String dialect;
-   /* @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean() {
-        LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-        entityManagerFactoryBean.setDataSource(getDataSource());
-        entityManagerFactoryBean.setPackagesToScan("com.example.demo.entity");
+    @Value("${spring.jpa.driver}")
+    private String driver;
+    /*@Value("${spring.jpa.hibernate.ddl-auto}")
+    private String ddlAuto;*/
+    /*@Value("${spring.jpa.hibernate.naming-strategy}")
+    private String strategy;*/
+    /*@Value("${spring.jpa.properties.hibernate.dialect}")
+    private String dialect;*/
 
-        JpaVendorAdapter verdorAdapter = new HibernateJpaVendorAdapter();
-        entityManagerFactoryBean.setJpaVendorAdapter(verdorAdapter);
-        entityManagerFactoryBean.setJpaProperties(getParameters());
-        return entityManagerFactoryBean;
-    }*/
-   /* private Properties getParameters() {
-        Properties properties = new Properties();
-        properties.setProperty("hibernate.ddl-auto", ddlAuto);
-        properties.setProperty("hibernate.dialect", dialect);
-        return properties;
-    }*/
 
 
     @Bean
@@ -57,7 +43,8 @@ public class JpaConfig {
         dataSource.setUrl(url);
         dataSource.setUsername(username);
         dataSource.setPassword(password);
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setDriverClassName(driver);
+        //dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         return dataSource;
     }
 }

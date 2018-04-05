@@ -17,18 +17,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 /**
- * Created by Cagy on 4/2/2018.
+ * Created by Oleksandr Chekalenko on 4/2/2018.
  */
 @Controller
 public class UserController {
 
 
-    @Autowired
-    private RoleService roleService;
+    /*@Autowired
+    private RoleService roleService;*/
     @Autowired
     private UserService userService;
 
-    public static final String ROLE_USER = "ROLE_USER";
+   /* public static final String ROLE_USER = "ROLE_USER";*/
 
 
     @GetMapping("/")
@@ -65,10 +65,6 @@ public class UserController {
             return "registrationPage2";
         } else
             userService.save(user);
-            Role role = new Role();
-            role.setName(user.getLogin());
-            role.setRole(ROLE_USER);
-            roleService.save(role);
             return "susuccessRegistration";
     }
 

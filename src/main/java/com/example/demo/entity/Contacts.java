@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 /**
- * Created by Cagy on 4/1/2018.
+ * Created by Oleksandr Chekalenko on 4/3/2018.
  */
 @Entity
 @Table(name = "contacts")
@@ -103,5 +103,20 @@ public class Contacts {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer();
+        sb.append(id_contact).append(",");
+        sb.append(surName).append(",");
+        sb.append(name).append(",");
+        sb.append(patronymic).append(",");
+        sb.append(mobileNumber).append(",");
+        sb.append(homeNumber).append(",");
+        sb.append(adds).append(",");
+        sb.append(email).append(",");
+        sb.append(user.getId_user());
+        return sb.toString();
     }
 }

@@ -14,7 +14,7 @@ import java.security.Principal;
 import java.util.List;
 
 /**
- * Created by Cagy on 4/2/2018.
+ * Created by Oleksandr Chekalenko on 4/2/2018.
  */
 @Controller
 @RequestMapping("/contact")

@@ -4,7 +4,7 @@ package com.example.demo.dao.interfaces;
 import com.example.demo.entity.Role;
 
 /**
- * Created by Cagy on 10/17/2017.
+ * Created by Oleksandr Chekalenko on 4/3/2018.
  */
 public interface RoleDao extends IDAO<Role> {
 

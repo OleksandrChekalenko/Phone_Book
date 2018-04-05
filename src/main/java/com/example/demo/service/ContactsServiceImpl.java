@@ -3,7 +3,6 @@ package com.example.demo.service;
 import com.example.demo.dao.interfaces.ContactsDao;
 import com.example.demo.entity.Contacts;
 import com.example.demo.service.interfaces.ContactsService;
-import com.example.demo.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,7 +11,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Created by Cagy on 4/2/2018.
+ * Created by Oleksandr Chekalenko on 4/2/2018.
  */
 public class ContactsServiceImpl implements ContactsService {
 
@@ -21,7 +20,6 @@ public class ContactsServiceImpl implements ContactsService {
 
     @Override
     public void save(Contacts contacts) {
-        contactsDao.save(contacts);
     }
 
     @Override

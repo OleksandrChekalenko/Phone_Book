@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Cagy on 4/1/2018.
+ * Created by Oleksandr Chekalenko on 4/3/2018.
  */
 @Entity
 @Table(name = "user")
@@ -82,4 +82,13 @@ public class User implements Serializable {
         return contactsList;
     }
 
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer();
+        sb.append(login).append(",");
+        sb.append(password).append(",");
+        sb.append(snp).append(",");
+        sb.append(enabled).append(",");
+        return sb.toString();
+    }
 }

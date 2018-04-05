@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.Assert.*;
 
 /**
- * Created by Cagy on 4/5/2018.
+ * Created by Oleksandr Chekalenko on 4/5/2018.
  */
 
 @SpringBootTest

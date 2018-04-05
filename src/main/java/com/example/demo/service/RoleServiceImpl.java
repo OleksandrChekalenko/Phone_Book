@@ -10,7 +10,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 /**
- * Created by Cagy on 10/17/2017.
+ * Created by Oleksandr Chekalenko on 4/3/2018.
  */
 
 public class RoleServiceImpl implements RoleService {

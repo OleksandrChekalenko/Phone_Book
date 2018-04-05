@@ -5,7 +5,7 @@ import com.example.demo.entity.Contacts;
 import java.util.List;
 
 /**
- * Created by Cagy on 11/23/2017.
+ * Created by Oleksandr Chekalenko on 4/3/2018.
  */
 public interface IService<T> {
 

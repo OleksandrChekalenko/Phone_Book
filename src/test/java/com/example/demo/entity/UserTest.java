@@ -8,7 +8,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
- * Created by Cagy on 4/4/2018.
+ * Created by Oleksandr Chekalenko on 4/4/2018.
  */
 public class UserTest {
 
