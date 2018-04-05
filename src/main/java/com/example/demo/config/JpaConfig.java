@@ -5,14 +5,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.jpa.JpaVendorAdapter;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
-import java.util.Properties;
-
 
 
 @Configuration
@@ -28,13 +23,6 @@ public class JpaConfig {
     private String password;
     @Value("${spring.jpa.driver}")
     private String driver;
-    /*@Value("${spring.jpa.hibernate.ddl-auto}")
-    private String ddlAuto;*/
-    /*@Value("${spring.jpa.hibernate.naming-strategy}")
-    private String strategy;*/
-    /*@Value("${spring.jpa.properties.hibernate.dialect}")
-    private String dialect;*/
-
 
 
     @Bean

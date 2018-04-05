@@ -23,12 +23,8 @@ import java.util.List;
 public class UserController {
 
 
-    /*@Autowired
-    private RoleService roleService;*/
     @Autowired
     private UserService userService;
-
-   /* public static final String ROLE_USER = "ROLE_USER";*/
 
 
     @GetMapping("/")
@@ -65,7 +61,7 @@ public class UserController {
             return "registrationPage2";
         } else
             userService.save(user);
-            return "susuccessRegistration";
+        return "susuccessRegistration";
     }
 
     @GetMapping("/about")

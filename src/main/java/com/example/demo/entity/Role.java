@@ -41,4 +41,13 @@ public class Role {
     public void setRole(String role) {
         this.role = role;
     }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Role{");
+        sb.append(id).append(",");
+        sb.append(name).append(",");
+        sb.append(role).append(",");
+        return sb.toString();
+    }
 }

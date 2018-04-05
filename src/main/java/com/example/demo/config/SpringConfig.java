@@ -1,14 +1,15 @@
 package com.example.demo.config;
 
 
-
 import com.example.demo.dao.ContactsDaoImpl;
 import com.example.demo.dao.RoleDaoImpl;
 import com.example.demo.dao.UserDaoImpl;
 import com.example.demo.dao.interfaces.ContactsDao;
 import com.example.demo.dao.interfaces.RoleDao;
 import com.example.demo.dao.interfaces.UserDao;
-import com.example.demo.service.*;
+import com.example.demo.service.ContactsServiceImpl;
+import com.example.demo.service.RoleServiceImpl;
+import com.example.demo.service.UserServiceImpl;
 import com.example.demo.service.interfaces.ContactsService;
 import com.example.demo.service.interfaces.RoleService;
 import com.example.demo.service.interfaces.UserService;
@@ -41,8 +42,11 @@ public class SpringConfig {
 
     @Bean
     public RoleService getRoleService() {
-        return new RoleServiceImpl();}
+        return new RoleServiceImpl();
+    }
 
     @Bean
-    public RoleDao getRoleDao() { return new RoleDaoImpl();}
+    public RoleDao getRoleDao() {
+        return new RoleDaoImpl();
+    }
 }

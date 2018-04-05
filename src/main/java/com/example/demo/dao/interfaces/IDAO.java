@@ -9,7 +9,6 @@ public interface IDAO<T> {
 
     void deleteById(int entity);
 
-
     T update(T entity);
 
     T getById(int id);

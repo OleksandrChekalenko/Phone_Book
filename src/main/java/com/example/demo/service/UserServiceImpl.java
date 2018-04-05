@@ -72,7 +72,9 @@ public class UserServiceImpl implements UserService {
             if (csvBool) {
                 try {
                     CSVWriter writer = new CSVWriter(new FileWriter("CSV_Contacts.csv", true));
-                    writer.writeNext(user.getContactsList().toString().split(","));
+                    writer.writeNext(user.getContactsList().get(user.getContactsList().size() - 1)
+                            .toString().replaceAll("\\[" , "")
+                            .replaceAll("\\]" , "").split(","));
                     writer.close();
                 } catch (IOException e) {
                     e.printStackTrace();

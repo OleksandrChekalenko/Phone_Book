@@ -20,7 +20,7 @@ import java.util.List;
 @RequestMapping("/contact")
 public class ContactsController {
 
-    int deletedContactId;
+    //int deletedContactId;
 
     @Autowired
     private UserService userService;
@@ -40,6 +40,37 @@ public class ContactsController {
         return "addContact";
     }
 
+    @GetMapping("contacts/delete/{id_contact}")
+    public String deleteContact(@PathVariable("id_contact") int id_contact) {
+        contactsService.deleteContact(id_contact);
+        return "redirect:/contact/contacts";
+    }
+
+    @GetMapping("edit/{id_contact}")
+    public String editPage(@PathVariable("id_contact") int id, Model model) {
+        model.addAttribute("contacts", contactsService.getById(id));
+        return "editContact";
+    }
+
+    @PostMapping("/update")
+    public String update(@ModelAttribute Contacts contact, Principal principal) {
+        contact.setUser(userService.getUserByLogin(principal.getName()));
+        contactsService.update(contact);
+        return "redirect:/contact/contacts";
+    }
+
+    @GetMapping("contacts/sortContactsByName")
+    public String sortContactsByName(Model model, Principal principal) {
+        model.addAttribute("contacts", contactsService.sortContactsByName(contactsService.getAll(userService.getUserByLogin(principal.getName()).getId_user())));
+        return "redirect:/contact/contacts";
+    }
+
+    @GetMapping("contacts/sortContactsBySurName")
+    public String sortContactsBySurName(Model model, Principal principal) {
+        model.addAttribute("contacts", contactsService.sortContactsBySurName(contactsService.getAll(userService.getUserByLogin(principal.getName()).getId_user())));
+        return "redirect:/contact/contacts";
+    }
+
     @PostMapping("/newContact")
     public String addNewContact(@ModelAttribute Contacts contact, Principal principal, Model model) {
         User user = userService.getUserByLogin(principal.getName());
@@ -55,39 +86,6 @@ public class ContactsController {
         }
     }
 
-    @GetMapping("contacts/delete/{id_contact}")
-    public String deleteContact(@PathVariable("id_contact") int id_contact, Principal principal) {
-       // User user = userService.getUserByLogin(principal.getName());
-        Contacts contact = contactsService.getById(id_contact);
-        deletedContactId = contact.getId_contact();
-        contact.setUser(null);
-        contactsService.update(contact);
-        contactsService.deleteContact(deletedContactId);
-        return "redirect:/contact/contacts";
-    }
-
-    @GetMapping("edit/{id_contact}")
-    public String editPage(@PathVariable("id_contact") int id, Model model) {
-        model.addAttribute("contacts", contactsService.getById(id));
-        return "editContact";
-    }
-    @PostMapping("/update")
-    public String update(@ModelAttribute Contacts contact, Principal principal) {
-        contact.setUser(userService.getUserByLogin(principal.getName()));
-        contactsService.update(contact);
-        return "redirect:/contact/contacts";
-    }
-
-    @GetMapping("contacts/sortContactsByName")
-    public String sortContactsByName(Model model, Principal principal) {
-        model.addAttribute("contacts", contactsService.sortContactsByName(contactsService.getAll(userService.getUserByLogin(principal.getName()).getId_user())));
-        return "redirect:/contact/contacts";
-    }
-    @GetMapping("contacts/sortContactsBySurName")
-    public String sortContactsBySurName(Model model, Principal principal) {
-        model.addAttribute("contacts", contactsService.sortContactsBySurName(contactsService.getAll(userService.getUserByLogin(principal.getName()).getId_user())));
-        return "redirect:/contact/contacts";
-    }
     @GetMapping("contacts/sortContactsByNumber")
     public String sortContactsByNumber(Model model, Principal principal) {
         model.addAttribute("contacts", contactsService.sortContactsByNumber(contactsService.getAll(userService.getUserByLogin(principal.getName()).getId_user())));

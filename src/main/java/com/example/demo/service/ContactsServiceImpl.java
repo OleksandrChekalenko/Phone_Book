@@ -18,6 +18,7 @@ public class ContactsServiceImpl implements ContactsService {
     @Autowired
     public ContactsDao contactsDao;
 
+    private int deletedContactId;
     @Override
     public void save(Contacts contacts) {
     }
@@ -47,8 +48,12 @@ public class ContactsServiceImpl implements ContactsService {
 
     @Override
     @Transactional
-    public void deleteContact(int id) {
-        contactsDao.deleteById(id);
+    public void deleteContact(int id_contact) {
+        Contacts contact = getById(id_contact);
+        deletedContactId = contact.getId_contact();
+        contact.setUser(null);
+        update(contact);
+        contactsDao.deleteById(id_contact);
     }
 
     @Override
